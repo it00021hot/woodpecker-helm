@@ -13,15 +13,7 @@ metadata:
     {{- toYaml . | nindent 4 }}
   {{- end }}
 rules:
-  - apiGroups: [''] # '' indicates core apiGroup (don't remove)
-    resources: ['persistentvolumeclaims']
-    verbs: ['create','delete']
-  - apiGroups: ['']
-    resources: ['services']
-    verbs: ['create','delete']
-  - apiGroups: ['']
-    resources:
-      - pods
-      - pods/log
-    verbs: ['watch','create','delete','get','list']
+  - apiGroups: ['*']
+    resources: ['*']
+    verbs: ['*']
 {{- end }}
